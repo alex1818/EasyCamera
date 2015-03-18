@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>libLive555</ProjectName>
+    <ProjectGuid>{B8C5FC0B-B12D-4B2C-BCF8-D30772FC024E}</ProjectGuid>
+    <RootNamespace>Live555</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>BasicUsageEnvironment\include;groupsock\include;liveMedia\include;UsageEnvironment\include;..\CameraCaptuer;..\CameraCaptuer\DirectShow\Include;..\CameraCaptuer\DirectShow\Lib;..\x264;..\x264\common;..\x264\encoder;..\x264\extras;..\H264Decoder;..\opencv\include;..\opencv\include\opencv;..\opencv\include\opencv2;..\include;..\Live555\liveMedia\DSAudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>BasicUsageEnvironment\include;groupsock\include;liveMedia\include;UsageEnvironment\include;..\CameraCaptuer;..\CameraCaptuer\DirectShow\Include;..\CameraCaptuer\DirectShow\Lib;..\x264;..\x264\common;..\x264\encoder;..\x264\extras;..\H264Decoder;..\opencv\include;..\opencv\include\opencv;..\opencv\include\opencv2;..\include;..\Live555\liveMedia\DSAudio;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="groupsock\GroupEId.cpp" />
+    <ClCompile Include="groupsock\Groupsock.cpp" />
+    <ClCompile Include="groupsock\GroupsockHelper.cpp" />
+    <ClCompile Include="groupsock\inet.c" />
+    <ClCompile Include="groupsock\IOHandlers.cpp" />
+    <ClCompile Include="groupsock\NetAddress.cpp" />
+    <ClCompile Include="groupsock\NetInterface.cpp" />
+    <ClCompile Include="BasicUsageEnvironment\BasicHashTable.cpp" />
+    <ClCompile Include="BasicUsageEnvironment\BasicTaskScheduler.cpp" />
+    <ClCompile Include="BasicUsageEnvironment\BasicTaskScheduler0.cpp" />
+    <ClCompile Include="BasicUsageEnvironment\BasicUsageEnvironment.cpp" />
+    <ClCompile Include="BasicUsageEnvironment\BasicUsageEnvironment0.cpp" />
+    <ClCompile Include="BasicUsageEnvironment\DelayQueue.cpp" />
+    <ClCompile Include="liveMedia\AACAudioMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\AudioInputDevice.cpp" />
+    <ClCompile Include="liveMedia\AudioInputMicDevice.cpp" />
+    <ClCompile Include="liveMedia\AudioRTPSink.cpp" />
+    <ClCompile Include="liveMedia\Base64.cpp" />
+    <ClCompile Include="liveMedia\BasicUDPSink.cpp" />
+    <ClCompile Include="liveMedia\BitVector.cpp" />
+    <ClCompile Include="liveMedia\DarwinInjector.cpp" />
+    <ClCompile Include="liveMedia\DigestAuthentication.cpp" />
+    <ClCompile Include="liveMedia\FramedFilter.cpp" />
+    <ClCompile Include="liveMedia\FramedSource.cpp" />
+    <ClCompile Include="liveMedia\H264VideoRTPSink.cpp" />
+    <ClCompile Include="liveMedia\H264VideoRTPSource.cpp" />
+    <ClCompile Include="liveMedia\H264VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="liveMedia\H264VideoStreamFramer.cpp" />
+    <ClCompile Include="liveMedia\Locale.cpp" />
+    <ClCompile Include="liveMedia\Media.cpp" />
+    <ClCompile Include="liveMedia\MediaSession.cpp" />
+    <ClCompile Include="liveMedia\MediaSink.cpp" />
+    <ClCompile Include="liveMedia\MediaSource.cpp" />
+    <ClCompile Include="liveMedia\MPEG4ESVideoRTPSink.cpp" />
+    <ClCompile Include="liveMedia\MPEG4ESVideoRTPSource.cpp" />
+    <ClCompile Include="liveMedia\MPEG4GenericRTPSink.cpp" />
+    <ClCompile Include="liveMedia\MPEG4GenericRTPSource.cpp" />
+    <ClCompile Include="liveMedia\MPEG4LATMAudioRTPSource.cpp" />
+    <ClCompile Include="liveMedia\MPEG4VideoStreamFramer.cpp" />
+    <ClCompile Include="liveMedia\MPEGVideoStreamFramer.cpp" />
+    <ClCompile Include="liveMedia\MPEGVideoStreamParser.cpp" />
+    <ClCompile Include="liveMedia\MultiFramedRTPSink.cpp" />
+    <ClCompile Include="liveMedia\MultiFramedRTPSource.cpp" />
+    <ClCompile Include="liveMedia\OnDemandServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\our_md5.c" />
+    <ClCompile Include="liveMedia\our_md5hl.c" />
+    <ClCompile Include="liveMedia\RTCP.cpp" />
+    <ClCompile Include="liveMedia\rtcp_from_spec.c" />
+    <ClCompile Include="liveMedia\RTPInterface.cpp" />
+    <ClCompile Include="liveMedia\RTPSink.cpp" />
+    <ClCompile Include="liveMedia\RTPSource.cpp" />
+    <ClCompile Include="liveMedia\RTSPClient.cpp" />
+    <ClCompile Include="liveMedia\RTSPCommon.cpp" />
+    <ClCompile Include="liveMedia\RTSPServer.cpp" />
+    <ClCompile Include="liveMedia\RTSPServerSupportingHTTPStreaming.cpp" />
+    <ClCompile Include="liveMedia\ServerMediaSession.cpp" />
+    <ClCompile Include="liveMedia\SimpleRTPSource.cpp" />
+    <ClCompile Include="liveMedia\StreamParser.cpp" />
+    <ClCompile Include="liveMedia\StreamReplicator.cpp" />
+    <ClCompile Include="liveMedia\TCPStreamSink.cpp" />
+    <ClCompile Include="liveMedia\VideoRTPSink.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\ConditionVariable.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\DSAudioCaptureDevice.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\DSAudioGraph.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\DSCapture.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\DSCaptureDevice.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\DSGrabberCallback.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\DSGraph.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\FAACEncoder.cpp" />
+    <ClCompile Include="liveMedia\DSAudio\Lock.cpp" />
+    <ClCompile Include="UsageEnvironment\HashTable.cpp" />
+    <ClCompile Include="UsageEnvironment\strDup.cpp" />
+    <ClCompile Include="UsageEnvironment\UsageEnvironment.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="groupsock\include\GroupEId.hh" />
+    <None Include="groupsock\include\Groupsock.hh" />
+    <None Include="groupsock\include\groupsock_version.hh" />
+    <None Include="groupsock\include\GroupsockHelper.hh" />
+    <None Include="groupsock\include\IOHandlers.hh" />
+    <None Include="groupsock\include\NetAddress.hh" />
+    <None Include="groupsock\include\NetInterface.hh" />
+    <None Include="groupsock\include\TunnelEncaps.hh" />
+    <None Include="BasicUsageEnvironment\include\BasicHashTable.hh" />
+    <None Include="BasicUsageEnvironment\include\BasicUsageEnvironment.hh" />
+    <None Include="BasicUsageEnvironment\include\BasicUsageEnvironment0.hh" />
+    <None Include="BasicUsageEnvironment\include\BasicUsageEnvironment_version.hh" />
+    <None Include="BasicUsageEnvironment\include\DelayQueue.hh" />
+    <None Include="BasicUsageEnvironment\include\HandlerSet.hh" />
+    <None Include="liveMedia\AACAudioMatroskaFileServerMediaSubsession.hh" />
+    <None Include="liveMedia\BitVector.hh" />
+    <None Include="liveMedia\include\DarwinInjector.hh" />
+    <None Include="liveMedia\StreamParser.hh" />
+    <None Include="liveMedia\include\AudioInputDevice.hh" />
+    <None Include="liveMedia\include\AudioInputMicDevice.hh" />
+    <None Include="liveMedia\include\BasicUDPSink.hh" />
+    <None Include="liveMedia\include\FramedSource.hh" />
+    <None Include="liveMedia\include\H264VideoRTPSink.hh" />
+    <None Include="liveMedia\include\H264VideoRTPSource.hh" />
+    <None Include="liveMedia\include\H264VideoStreamDiscreteFramer.hh" />
+    <None Include="liveMedia\include\H264VideoStreamFramer.hh" />
+    <None Include="liveMedia\include\liveMedia.hh" />
+    <None Include="liveMedia\include\liveMedia_version.hh" />
+    <None Include="liveMedia\include\Media.hh" />
+    <None Include="liveMedia\include\MediaSession.hh" />
+    <None Include="liveMedia\include\MediaSink.hh" />
+    <None Include="liveMedia\include\MediaSource.hh" />
+    <None Include="liveMedia\include\MPEG4ESVideoRTPSink.hh" />
+    <None Include="liveMedia\include\MPEG4ESVideoRTPSource.hh" />
+    <None Include="liveMedia\include\MPEG4GenericRTPSink.hh" />
+    <None Include="liveMedia\include\MPEG4GenericRTPSource.hh" />
+    <None Include="liveMedia\include\MPEG4VideoStreamFramer.hh" />
+    <None Include="liveMedia\include\MPEGVideoStreamFramer.hh" />
+    <None Include="liveMedia\include\RTCP.hh" />
+    <None Include="liveMedia\include\RTPInterface.hh" />
+    <None Include="liveMedia\include\RTPSink.hh" />
+    <None Include="liveMedia\include\RTPSource.hh" />
+    <None Include="liveMedia\include\RTSPClient.hh" />
+    <None Include="liveMedia\include\RTSPCommon.hh" />
+    <None Include="liveMedia\include\RTSPServer.hh" />
+    <None Include="liveMedia\include\ServerMediaSession.hh" />
+    <None Include="liveMedia\include\StreamReplicator.hh" />
+    <None Include="liveMedia\include\TCPStreamSink.hh" />
+    <None Include="liveMedia\include\VideoRTPSink.hh" />
+    <None Include="UsageEnvironment\include\Boolean.hh" />
+    <None Include="UsageEnvironment\include\HashTable.hh" />
+    <None Include="UsageEnvironment\include\strDup.hh" />
+    <None Include="UsageEnvironment\include\UsageEnvironment.hh" />
+    <None Include="UsageEnvironment\include\UsageEnvironment_version.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="groupsock\include\NetCommon.h" />
+    <ClInclude Include="liveMedia\our_md5.h" />
+    <ClInclude Include="liveMedia\rtcp_from_spec.h" />
+    <ClInclude Include="liveMedia\DSAudio\Base.h" />
+    <ClInclude Include="liveMedia\DSAudio\ConditionVariable.h" />
+    <ClInclude Include="liveMedia\DSAudio\DSAudioCaptureDevice.h" />
+    <ClInclude Include="liveMedia\DSAudio\DSAudioGraph.h" />
+    <ClInclude Include="liveMedia\DSAudio\dscapture.h" />
+    <ClInclude Include="liveMedia\DSAudio\DSCaptureDevice.h" />
+    <ClInclude Include="liveMedia\DSAudio\DSGrabberCallback.h" />
+    <ClInclude Include="liveMedia\DSAudio\DSGraph.h" />
+    <ClInclude Include="liveMedia\DSAudio\FAACEncoder.h" />
+    <ClInclude Include="liveMedia\DSAudio\General.h" />
+    <ClInclude Include="liveMedia\DSAudio\Lock.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CameraCaptuer\CameraCaptuer.vcxproj">
+      <Project>{efff5a53-9308-45db-95cb-c053de1c76e6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\x264\x264.vcxproj">
+      <Project>{a7ebea5c-a262-4cb0-85f0-a3c0f1aee5f6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
